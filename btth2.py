@@ -218,9 +218,7 @@ while True:
             print(f"Tổng tiền nhận khi đến hạn: {total:,.0f}")
 
         case 6:
-            account_id = input(
-                "Nhập mã sổ tiết kiệm cần kiểm tra: "
-            ).strip().upper()
+            account_id = input("Nhập mã sổ tiết kiệm cần kiểm tra: ").strip().upper()
 
             target_account = None
 
@@ -237,14 +235,9 @@ while True:
                 print("Không thể thao tác với sổ tiết kiệm đã tất toán")
                 continue
 
-            actual_months_input = input(
-                "Nhập số tháng thực gửi: "
-            ).strip()
+            actual_months_input = input("Nhập số tháng thực gửi: ").strip()
 
-            if (
-                not actual_months_input.isdigit()
-                or int(actual_months_input) <= 0
-            ):
+            if (not actual_months_input.isdigit()or int(actual_months_input) <= 0):
                 print("Số tháng thực gửi không hợp lệ!")
                 continue
 
@@ -257,13 +250,7 @@ while True:
                 applied_rate = target_account["interest_rate"]
                 print("Khách hàng đủ điều kiện hưởng lãi đúng hạn.")
 
-            interest = (
-                target_account["balance"]
-                * applied_rate
-                / 100
-                * actual_months
-                / 12
-            )
+            interest = (target_account["balance"]* applied_rate/ 100* actual_months/ 12)
 
             total = target_account["balance"] + interest
 
